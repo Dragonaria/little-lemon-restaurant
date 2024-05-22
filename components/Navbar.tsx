@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { markazi } from "@/app/fonts";
 import logo from "@/public/Logo.svg";
-import { markazi } from "@/app/layout";
 
 interface Directory {
     name: string;
