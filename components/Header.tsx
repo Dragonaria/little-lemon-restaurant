@@ -2,9 +2,9 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Header() {
+export default function Header(props: any) {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -27,8 +27,8 @@ export default function Header() {
     }, [lastScrollY]);
 
     return(
-        <header className={`bg-slate-700 h-14 sticky z-10 ${isVisible ? 'top-0' : ''} `}>
-            HEADER
+        <header className={`sticky z-10 py-4 px-0 bg-white ${isVisible ? 'top-0' : ''} `}>
+            {props.children}
         </header>
     );
 }
