@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/Logo.svg";
+import { markazi } from "@/app/layout";
 
 interface Directory {
     name: string;
@@ -19,18 +20,22 @@ export default function Navbar(props: DirectoryList) {
             props.directories.map(dir => {
                 return (
                     <Link href={dir.url} key={dir.name}>
-                        <h2>{dir.name}</h2>
+                        <h2 className="text-2xl font-semibold text-tertiary-color hover:text-dark-color">{dir.name}</h2>
                     </Link>
                 )
             })
         );
     };
     return(
-        <nav>
-            <Link href="/">
-                <Image src={logo} alt="Logo"/>
-            </Link>
-            {listNav()}
+        <nav className="flex items-center justify-between m-auto max-w-6xl px-5">
+            <div id="header-logo">
+                <Link href="/">
+                    <Image src={logo} alt="Logo" width={220}/>
+                </Link>
+            </div>
+            <div className={`${markazi.className} lg:flex items-center gap-11 hidden`} id="header-nav">
+                {listNav()}
+            </div>
         </nav>
     );
 }
