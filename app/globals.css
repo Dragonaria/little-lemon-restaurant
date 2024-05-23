@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("boxicons/css/boxicons.min.css");
+
+@layer components {
+    .btn-primary{
+        @apply border-2 rounded-full bg-primary-color border-light-color hover:bg-primary-hover-color hover:border-primary-color
+    }
+    .btn-secondary {
+        @apply border-2 rounded-full bg-light-color border-primary-color hover:bg-primary-color hover:border-light-color
+    }
+}

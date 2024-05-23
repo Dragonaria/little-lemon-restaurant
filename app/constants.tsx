@@ -12,14 +12,6 @@ export const directories = [
         url: "/menu"
     },
     {
-        name: "Reservations",
-        url: "/reservations"
-    },
-    {
-        name: "Order Online",
-        url: "/order"
-    },
-    {
         name: "Login",
         url: "/login"
     }

@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { markazi } from "@/app/fonts";
 import logo from "@/public/Logo.svg";
+import menu from "@/public/menu.svg"
+import cart from "@/public/cart.svg"
 
 interface Directory {
     name: string;
@@ -33,8 +35,21 @@ export default function Navbar(props: DirectoryList) {
                     <Image src={logo} alt="Logo" width={220}/>
                 </Link>
             </div>
-            <div className={`${markazi.className} lg:flex items-center gap-11 hidden`} id="header-nav">
-                {listNav()}
+            <div className={`${markazi.className} flex items-center gap-11`} id="header-nav">
+                <div className="hidden lg:flex items-center gap-11" id="header-nav-text">
+                    {listNav()}
+                </div>
+                <div className="flex gap-5" id="header-buttons">
+                    <button className="btn-secondary h-12 w-12 px-3 lg:hidden">
+                        <Image src={menu} alt="Menu"/>
+                    </button>
+                    <button className="btn-secondary h-12 w-12 px-3">
+                        <Image src={cart} alt="Cart"/>
+                    </button>
+                    <button className="btn-primary px-3 text-2xl font-semibold text-dark-color">
+                        Reserve Table
+                    </button>
+                </div>
             </div>
         </nav>
     );
